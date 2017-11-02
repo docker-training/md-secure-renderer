@@ -38,8 +38,10 @@ router.get("*", function(req, res){
         return res.send(file)
     } else {
         //all other files, render as code block
-        var data = marked('```' + file.toString() + '```');
-        return res.render('index', { markdown:data })
+        var fileName = path.basename(fullPath);
+        var fileExt = path.extname(fullPath);
+        var data = marked('```' + fileExt + '\n' + file.toString() + '```');
+        return res.render('index', { title:fileName, markdown:data })
     }
 
     res.render
