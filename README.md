@@ -12,7 +12,7 @@ Renders markdown projects from encypted tar files
 .vscode/
 ```
 
-2. Create Dockerfile in the root of the project you want to render.
+1. Create Dockerfile in the root of the project you want to render.
 
 ```Dockerfile
 #Dockerfile
@@ -28,7 +28,7 @@ WORKDIR /content
 
 RUN tar -czf - * | openssl enc -e -aes256 -k $KEY -out content.tar.gz
 
-FROM broyal/md-secure-renderer:0.1
+FROM broyal/md-secure-renderer:latest
 
 COPY --from=builder /content/content.tar.gz /app/content.tar.gz
 ```
