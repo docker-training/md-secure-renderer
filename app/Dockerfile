@@ -1,4 +1,6 @@
-FROM node:6.11.0
+FROM node:6-alpine
+
+RUN apk add --no-cache openssl
 
 COPY ./package.json /app/package.json
 
