@@ -7,8 +7,9 @@ img {
 }
 
 .logo {
-    height: 26px;
-    margin-left: -60px;
+    height: 3em;
+    margin-left: -5em;
+    margin-top: -1em;
 }
 
 .navbar {
